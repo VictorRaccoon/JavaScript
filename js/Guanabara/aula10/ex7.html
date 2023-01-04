@@ -16,54 +16,77 @@
         #res {
             margin-top: 20px;
         }
+        .container {
+            display: flex;
+        }
+        .signal {
+            margin: 0 12px;
+        }
     </style>
 </head>
 <body>
     <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1"> +
-    <input type="number" name="txtn2" id="txtn2">
+    <div class="container">
+        <input type="number" name="txtn1" id="txtn1">
+        <div id="signal" class="signal"></div>
+        <input type="number" name="txtn2" id="txtn2">
+    </div>
+    
     <input type="button" value="Somar" onclick="somar()">
-    <input type="button" value="Subtrair">
-    <input type="button" value="Multiplicar" onclick="multiplicar();">
+    <input type="button" value="Subtrair" id="sub">
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Dividir" id="division">
     <div id="res">Resultado</div>
     <script>
         function somar() {
             var tn1 = document.getElementById("txtn1");
             var tn2 = document.getElementById("txtn2");
             var res = document.getElementById("res");
+            var signal = document.getElementById("signal");
+            signal.innerHTML = "+";
             var n1 = Number(tn1.value);
             var n2 = Number(tn2.value);
             var s = n1 + n2;
             res.innerHTML = `A soma entre ${n1} e ${n2} é = <strong>${s}</strong>`;
         }
         
-        var result = document.getElementById("res");
-        result.addEventListener("click", subtrair);
-
         function subtrair() {
             var input1 = document.getElementById("txtn1");
             var input2 = document.getElementById("txtn2"); 
+            var signal = document.getElementById("signal");
+            signal.innerHTML = "-";
             var number1 = Number(input1.value);
             var number2 = Number(input2.value);
             var sub = number1 - number2;
-            document.getElementById("res").innerHTML = `a subtração de ${number1} e ${number2} é ${result}`
+            document.getElementById("res").innerHTML = `A subtração entre ${number1} e ${number2} é = <strong>${sub}</strong>`;
         }
+        var btnSub = document.getElementById("sub");
+        btnSub.addEventListener("click", subtrair);
 
         function multiplicar() {
             var input1 = document.getElementById("txtn1");
-            var input2 = document.getElementById("txtn2"); //usando name seria: var input2 = document.getElementsByName("txtn2")[0];
+            var input2 = document.getElementById("txtn2");
             var result = document.getElementById("res");
+            var signal = document.getElementById("signal");
+            signal.innerHTML = "x";
             var number1 = Number(input1.value);
             var number2 = Number(input2.value);
             var mult = number1 * number2;
-            result.innerHTML = `a multiplicação de ${number1} por ${number2} é ${mult}`;
+            result.innerHTML = `A multiplicação entre ${number1} e ${number2} é = <strong>${mult}</strong>`;
         }
 
-        /*
-        1 - diferença de uso de objeto pra array(quando usar e etc)
-        2 - como usar o EventListener
-        3 - quais métodos padrão estudar (do JS como Nummber, toString, IsNumber etc e do EventListener como click, mousemove, mouseout etc)
-        */
+        var btnDiv = document.querySelector("#division");
+        btnDiv.addEventListener("click", function () {
+            var input1 = document.getElementById("txtn1");
+            var input2 = document.getElementById("txtn2");
+            var result = document.getElementById("res");
+            var signal = document.getElementById("signal");
+            signal.innerHTML = "/";
+            var number1 = Number(input1.value);
+            var number2 = Number(input2.value);
+            var Div = number1 / number2;
+            result.innerHTML = `A divisão entre ${number1} e ${number2} é = <strong>${Div}</strong>`;
+        });
     </script>
 </body>
 </html>

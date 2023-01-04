@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 200px;
+        }
+        #res {
+            margin-top: 20px;
+        }
+        .container {
+            display: flex;
+        }
+        .signal {
+            margin: 0 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div class="container">
+        <input type="number" name="txtn1" id="txtn1">
+        <div id="signal" class="signal"></div>
+        <input type="number" name="txtn2" id="txtn2">
+    </div>
+    
+    <input type="button" value="Somar" id="sum" onclick="verification(p = 'sum')">
+    <input type="button" value="Subtrair" id="sub" onclick="verification(p = 'sub')">
+    <input type="button" value="Multiplicar" id="mult" onclick="verification(p = 'mult')">
+    <input type="button" value="Dividir" id="div" onclick="verification(p = 'div')">
+    <div id="res">Resultado</div>
+    <script>
+        
+        const verification = (p) => {
+            switch (p) {
+                case 'sum':
+                    var btn = document.querySelector("#sum");
+                    var sig = "+"
+                    Sum()
+                    break;
+                case 'sub':
+                    var btn = document.querySelector("#sub");
+                    Sub()
+                    var sig = "-"
+                    break;
+                case 'mult':
+                    var btn = document.querySelector("#mult");
+                    Mult()
+                    var sig = "x"
+                    break;
+                case 'div':
+                    var btn = document.querySelector("#div");
+                    Div()
+                    var sig = "&divide;"
+                    break;
+                default:
+                    document.write("Error")
+                    break;
+            }
+        }
+        
+            var input1 = document.getElementById("txtn1");
+            var input2 = document.getElementById("txtn2");
+            var result = document.getElementById("res");
+            var signal = document.getElementById("signal");
+            signal.innerHTML = sig;
+            var number1 = Number(input1.value);
+            var number2 = Number(input2.value);
+            
+            result.innerHTML = `A operação entre ${number1} e ${number2} é = <strong>${Div}</strong>`;
+        
+        const Sum = () =>  {
+            var Div = number1 + number2;
+        }
+        const Sub = () =>  {
+            var Div = number1 - number2;
+        }
+        const Mult = () =>  {
+            var Div = number1 * number2;
+        }
+        const Div = () =>  {
+            var Div = number1 / number2;
+        }
+        
+    </script>
+</body>
+</html>
