@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +10,26 @@
         body {
             font: normal 20pt Arial;
         }
+
         input {
             font: normal 18pt Arial;
             width: 200px;
         }
+
         #res {
             margin-top: 20px;
         }
+
         .container {
             display: flex;
         }
+
         .signal {
             margin: 0 12px;
         }
     </style>
 </head>
+
 <body>
     <h1>Calculadora</h1>
     <div class="container">
@@ -31,33 +37,18 @@
         <div id="signal" class="signal"></div>
         <input type="number" name="txtn2" id="txtn2">
     </div>
-    
+
     <input type="button" value="Somar" id="soma">
     <input type="button" value="Subtrair" id="subtração">
     <input type="button" value="Multiplicar" id="multiplicação">
     <input type="button" value="Dividir" id="divisão">
     <div id="res">Resultado</div>
     <script>
-        var input1 = document.getElementById("txtn1");
-        var input2 = document.getElementById("txtn2");
-        var result = document.getElementById("res");
-        var signal = document.getElementById("signal");
-        var number1 = Number(input1.value);
-        var number2 = Number(input2.value);
-
-        var btnSum = document.querySelector("#soma");
-        btnSum.addEventListener("click", Operation);
-
-        var btnSub = document.querySelector("#subtração");
-        btnSub.addEventListener("click", Operation);
-
-        var btnMult = document.querySelector("#multiplicação");
-        btnMult.addEventListener("click", Operation);
-
-        var btnDiv = document.querySelector("#divisão");
-        btnDiv.addEventListener("click", Operation);
-
-        function Operation(input) {
+        const Operation = (input) => {
+            var input1 = document.getElementById("txtn1");
+            var input2 = document.getElementById("txtn2");
+            var result = document.getElementById("res");
+            var signal = document.getElementById("signal");
             number1 = Number(input1.value);
             number2 = Number(input2.value);
             var opRes;
@@ -84,8 +75,19 @@
                     break;
             }
             signal.innerHTML = sig;
-            result.innerHTML = `${number1} ${sig} ${number2} = <strong>${opRes}</strong>`
+            result.innerHTML = `A ${input.target.id} entre ${number1} e ${number2} é = <strong>${opRes}</strong>`
         }
+
+        const addEventListenerToElement = (selector) => {
+            let element = document.querySelector(selector);
+            element.addEventListener("click", Operation);
+        }
+
+        addEventListenerToElement("#soma");
+        addEventListenerToElement("#subtração");
+        addEventListenerToElement("#multiplicação");
+        addEventListenerToElement("#divisão");
     </script>
 </body>
+
 </html>

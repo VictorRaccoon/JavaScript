@@ -57,12 +57,16 @@
         var btnDiv = document.querySelector("#divisão");
         btnDiv.addEventListener("click", Operation);
 
-        function Operation(input) {
+        function Operation(e) {
+            var vet = [1, 2, 3, 4];
+            vet.map(function(atual, indice, array){
+                console.log(atual,indice,array);
+            });
             number1 = Number(input1.value);
             number2 = Number(input2.value);
             var opRes;
             var sig;
-            switch (input.target.id) {
+            switch (e.target.id) {
                 case "soma":
                     opRes = number1 + number2;
                     sig = "+"
