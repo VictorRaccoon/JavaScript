@@ -15,31 +15,31 @@ function verification() {
         if (formSex[0].checked) {
             gender = "Homem";
             if (age >= 0 && age < 10) {
-                img.setAttribute("src", "bebeM.jpg");
+                img.setAttribute("src", "bebeM.png");
             }
             else if (age < 21) {
-                img.setAttribute("src", "jovemM.jpg");
+                img.setAttribute("src", "jovemM.png");
             }
             else if (age < 50) {
-                img.setAttribute("src", "adultoM.jpg");
+                img.setAttribute("src", "adultoM.png");
             }
             else { 
-                img.setAttribute("src", "idosoM.jpg");
+                img.setAttribute("src", "idosoM.png");
             }
         }
         else if (formSex[1].checked) {
             gender = "Mulher";
             if (age >= 0 && age < 10) {
-                img.setAttribute("src", "bebeF.jpg");
+                img.setAttribute("src", "bebeF.png");
             }
             else if (age < 21) {
-                img.setAttribute("src", "jovemF.jpg");
+                img.setAttribute("src", "jovemF.png");
             }
             else if (age < 50) {
-                img.setAttribute("src", "adultoF.jpg");
+                img.setAttribute("src", "adultoF.png");
             }
             else { 
-                img.setAttribute("src", "idosoF.jpg");
+                img.setAttribute("src", "idosoF.png");
             }
         }
         result.style.textAlign = "center";

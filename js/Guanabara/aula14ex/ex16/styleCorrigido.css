@@ -14,15 +14,19 @@ section {
     margin: auto;
     box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.3);
 }
-#res {
+/* div {
     display: flex;
     flex-direction: column;
-}
-#res img {
-    width: 251px;
-    height: 243px;
-    margin-top: 10px;
-    align-self: center;
+} */
+/* .inputNumb {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+.inputBtn {
+    width: 60px;
 }
 footer {
     color: #fff;
