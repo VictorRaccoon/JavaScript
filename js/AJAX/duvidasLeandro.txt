@@ -1,0 +1,1 @@
+diferenciar Try Cath e finaly de then e catch

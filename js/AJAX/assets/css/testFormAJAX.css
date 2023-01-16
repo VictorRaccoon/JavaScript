@@ -1,0 +1,30 @@
+body {
+    background-color: dodgerblue;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input[type="text"] {
+    width: 600px;
+    height: 24px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    background-color: #ccc;
+}
+input[type="text"]:focus {
+    background-color: rgb(236, 234, 234);
+}
+button {
+    width: 100px;
+    margin: auto;
+    height: 50px;
+    font-size: 13pt;
+    background-color: black;
+    color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+}
