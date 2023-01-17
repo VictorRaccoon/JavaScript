@@ -1,0 +1,1 @@
+msg => document.write(msg);
